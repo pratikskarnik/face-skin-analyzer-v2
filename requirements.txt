@@ -1,4 +1,10 @@
-streamlit==1.29.0
-pandas>=1.3.0
+streamlit==1.32.2
 scikit-learn
 altair>=4.0
+fastai
+scikit-image
+openpyxl
+pandas
+httpx
+gradio
+Pillow
