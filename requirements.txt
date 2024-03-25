@@ -8,3 +8,5 @@ pandas
 httpx
 gradio
 Pillow
+matplotlib
+plotly
