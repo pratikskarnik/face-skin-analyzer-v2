@@ -1,4 +1,4 @@
-streamlit==1.32.2
+streamlit
 scikit-learn
 altair>=4.0
 fastai
@@ -10,3 +10,4 @@ gradio
 Pillow
 matplotlib
 plotly
+black
