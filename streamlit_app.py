@@ -30,9 +30,9 @@ def predict(image):
     return {labels[i]: float(probs[i]) for i in range(len(labels))}
 
 
-st.title("Face Skin Analyzer")
+st.title("Face Skin AI")
 st.markdown(
-    "A face condition detector trained on the custom dataset with fastai. Upload a photo of your face to get predictions."
+    """This app, called "Face Skin AI," helps you detect potential skin issues on your face. Simply upload a photo of your face, and it will analyze the image to provide you with possible face skin issues you might have. After uploading, click on "Predict" to get the results. It then suggests solutions for those conditions, directing you to relevant products on Amazon for treatment."""
 )
 uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "png", "jpeg"])
 if uploaded_file is not None:
