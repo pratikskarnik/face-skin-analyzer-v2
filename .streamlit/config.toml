@@ -7,3 +7,4 @@ font="sans serif"
 [server]
 enableXsrfProtection = false
 enableCORS = false
+enableStaticServing = true

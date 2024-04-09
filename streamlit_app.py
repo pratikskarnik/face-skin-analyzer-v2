@@ -73,5 +73,7 @@ if uploaded_file is not None:
                     condition = row["class"]
                     link = row["profit_link"]
                     st.write(f"- [{condition} treatment]( {link} )")
+                    st.markdown(f"""<a href={link}><img src="./app/static/{condition}.png" width="100%" height="auto"></a>""",unsafe_allow_html=True)
+                    
         except Exception as e:
             st.error(f"Error making prediction: {e}")
