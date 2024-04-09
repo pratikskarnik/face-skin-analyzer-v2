@@ -6,6 +6,7 @@ from PIL import Image
 import plotly.express as px
 import numpy as np
 import pathlib
+import urllib.parse
 
 plt = platform.system()
 if plt == "Linux":
@@ -71,9 +72,10 @@ if uploaded_file is not None:
             for idx, row in df2.iterrows():
                 if row["class"] in preds2:
                     condition = row["class"]
+                    encoded_condition = urllib.parse.quote(condition)
                     link = row["profit_link"]
                     st.write(f"- [{condition} treatment]( {link} )")
-                    st.markdown(f"""<a href={link}><img src="./app/static/{condition}.png" width="100%" height="auto"></a>""",unsafe_allow_html=True)
+                    st.markdown(f"""<a href={link}><img src="./app/static/{encoded_condition}.png" width="100%" height="auto"></a>""",unsafe_allow_html=True)
                     
         except Exception as e:
             st.error(f"Error making prediction: {e}")
