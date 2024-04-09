@@ -72,10 +72,14 @@ if uploaded_file is not None:
             for idx, row in df2.iterrows():
                 if row["class"] in preds2:
                     condition = row["class"]
-                    encoded_condition = urllib.parse.quote(condition)
+                    encoded_condition = condition.replace(" ", "_")
+                    print(encoded_condition)
                     link = row["profit_link"]
                     st.write(f"- [{condition} treatment]( {link} )")
-                    st.markdown(f"""<a href={link}><img src="./app/static/{encoded_condition}.png" width="100%" height="auto"></a>""",unsafe_allow_html=True)
-                    
+                    st.markdown(
+                        f"""<a href={link}><img src="./app/static/{encoded_condition}.png" width="100%" height="auto" alt="{condition} Treatment"></a>""",
+                        unsafe_allow_html=True,
+                    )
+
         except Exception as e:
             st.error(f"Error making prediction: {e}")
